@@ -20,6 +20,20 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
 
   // --- Funções de Requisição e Efeitos (Os alunos implementarão aqui) ---
 
+  // Busca todos os materiais cadastrados
+  const buscarMateriais = async () => {
+    try{
+      setLoading(true);
+      const response = await fetch(API_URL);
+      const dados = await response.json();
+      setMateriais(dados);
+    } catch (error) {
+      console.log(erro);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
