@@ -3,6 +3,20 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, Activity
 
 export default function App() {
   // --- Estados da Aplicação (Os alunos implementarão aqui) ---
+  // Guarda o nome digitado
+const [nome, setNome] = useState('');
+
+// Guarda a quantidade digitada
+const [quantidade, setQuantidade] = useState('');
+
+// Guarda os materiais vindos da API
+const [materiais, setMateriais] = useState([]);
+
+// Mostra carregamento enquanto busca dados
+const [loading, setLoading] = useState(false);
+
+// URL da MockAPI
+const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
 
   // --- Funções de Requisição e Efeitos (Os alunos implementarão aqui) ---
 
