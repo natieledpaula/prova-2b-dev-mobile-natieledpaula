@@ -34,6 +34,14 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
     }
   };
 
+  // Executa automaticamente quando a tela abre
+  // e chama a função que busca os materiais
+  useEffect(() => {
+
+    buscarMateriais();
+
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
