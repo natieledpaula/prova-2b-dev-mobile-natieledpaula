@@ -101,6 +101,7 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
       </Text>
 
       {/* Os alunos vão construir os componentes visuais das Sprints aqui dentro */}
+
       <TextInput
         testID="input-nome"
         placeholder="Nome do Material"
@@ -127,6 +128,14 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
           Cadastrar
         </Text>
       </TouchableOpacity>
+    
+      {
+      loading &&
+      <ActivityIndicator
+        size="large"
+        color="#2196F3"
+      />
+      }
       
     </View>
   );
