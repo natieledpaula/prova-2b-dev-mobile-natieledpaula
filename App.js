@@ -42,6 +42,54 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
 
   }, []);
 
+  // Cadastra um novo material na API
+  const cadastrarMaterial = async () => {
+
+    // Valida se os campos estão preenchidos
+  if (!nome || !quantidade) {
+
+    alert('Preencha todos os campos');
+    return;
+
+  }
+
+  // Tenta enviar os dados para a API
+  try {
+
+    // Cria um objeto com os dados do novo material
+    const novoMaterial = {
+
+      nome,
+      quantidade
+
+    };
+
+    // Envia os dados para a API
+    await fetch(API_URL, {
+
+      method: 'POST',
+
+      headers: {
+        'Content-Type': 'application/json'
+      },
+
+      body: JSON.stringify(novoMaterial)
+
+    });
+
+    setNome('');
+    setQuantidade('');
+
+    buscarMateriais();
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
+
+};
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
