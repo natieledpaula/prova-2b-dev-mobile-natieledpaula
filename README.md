@@ -121,7 +121,7 @@ Os componentes obrigatórios foram implementados conforme solicitado pela ativid
 ### 1. Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/natieledpaula/prova-2b-dev-mobile-natieledpaula.git
 ```
 
 ### 2. Entrar na Pasta do Projeto
