@@ -16,7 +16,7 @@ const [materiais, setMateriais] = useState([]);
 const [loading, setLoading] = useState(false);
 
 // URL da MockAPI
-const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
+const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:materiais';
 
   // --- Funções de Requisição e Efeitos (Os alunos implementarão aqui) ---
 
@@ -164,12 +164,14 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
     paddingTop: 50,
     paddingHorizontal: 20,
   },
+
   title: {
     fontSize: 22,
     fontWeight: 'bold',
@@ -177,11 +179,45 @@ const styles = StyleSheet.create({
     marginBottom: 10, // Reduzido ligeiramente para aproximar o texto explicativo
     color: '#333',
   },
+
   description: {
     fontSize: 14,
     color: '#666',
     textAlign: 'center',
     lineHeight: 20, // Dá um espaçamento confortável entre as linhas do parágrafo
     marginBottom: 30, // Margem inferior para afastar o texto dos futuros inputs dos alunos
-  }
+  },
+
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 10,
+  },
+
+  button: {
+    backgroundColor: '#2196F3',
+    padding: 15,
+    borderRadius: 8,
+    marginBottom: 20,
+  },
+
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+
+  card: {
+    backgroundColor: '#f5f5f5',
+    padding: 12,
+    marginBottom: 10,
+    borderRadius: 8,
+  },
+
+  materialNome: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
