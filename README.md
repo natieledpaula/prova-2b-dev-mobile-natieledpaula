@@ -1,1 +1,117 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jOw_Hzd7)
+# 📦 Sistema de Controle de Estoque para Laboratório de Enfermagem
+
+## 📖 Sobre o Projeto
+
+Este projeto foi desenvolvido utilizando React Native com o objetivo de modernizar o controle de estoque do laboratório de enfermagem.
+
+Atualmente o controle é realizado por meio de planilhas Excel e anotações em papel, o que pode gerar retrabalho, erros de contagem e dificuldades na atualização em tempo real.
+
+A aplicação permite cadastrar materiais e visualizar o estoque de forma simples, rápida e integrada a uma MockAPI.
+
+---
+
+## 🎯 Objetivos
+
+- Facilitar o cadastro de materiais.
+- Permitir a consulta rápida do estoque.
+- Reduzir erros de controle manual.
+- Centralizar as informações em uma única plataforma.
+- Servir como base para futuras funcionalidades de gestão de estoque.
+
+---
+
+## ⚙️ Funcionalidades da Sprint 1
+
+### ✅ Cadastro de Materiais
+
+Permite cadastrar novos materiais informando:
+
+- Nome do material
+- Quantidade disponível
+
+### ✅ Consulta de Estoque
+
+Exibe os materiais cadastrados através de uma lista dinâmica.
+
+### ✅ Integração com MockAPI
+
+Utiliza requisições HTTP para comunicação com a API.
+
+### ✅ Atualização Automática
+
+Ao abrir o aplicativo, os dados são carregados automaticamente utilizando o Hook `useEffect`.
+
+### ✅ Interface Mobile
+
+Aplicação desenvolvida para dispositivos móveis utilizando React Native.
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- React Native
+- JavaScript
+- Expo
+- MockAPI
+- Git
+- GitHub
+
+---
+
+## 🏗 Estrutura do Projeto
+
+```
+projeto-almoxarifado/
+│
+├── App.js
+├── package.json
+├── README.md
+├── assets/
+└── node_modules/
+```
+
+---
+
+## 🔄 Fluxo da Aplicação
+
+1. O usuário abre o aplicativo.
+2. O Hook `useEffect` executa automaticamente.
+3. É realizada uma requisição GET para a MockAPI.
+4. Os materiais são carregados na FlatList.
+5. O usuário preenche os campos Nome e Quantidade.
+6. Ao clicar em "Cadastrar", é enviada uma requisição POST.
+7. A lista é atualizada automaticamente.
+
+---
+
+## 🧪 Test IDs Utilizados
+
+Os componentes obrigatórios foram implementados conforme solicitado pela atividade.
+
+| Componente | testID |
+|------------|---------|
+| Campo Nome | input-nome |
+| Campo Quantidade | input-quantidade |
+| Botão Cadastrar | btn-cadastrar |
+| Lista de Materiais | lista-materiais |
+
+---
+
+## 📋 Requisitos Atendidos
+
+### Funcionais
+
+- Cadastro de materiais.
+- Consulta de estoque.
+- Integração com API.
+- Atualização automática da lista.
+
+### Técnicos
+
+- Utilização de React Native.
+- Utilização de FlatList.
+- Utilização de useEffect.
+- Integração com MockAPI.
+- Implementação dos testID obrigatórios.
+
+---
