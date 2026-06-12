@@ -57,3 +57,17 @@ Aplicação desenvolvida para dispositivos móveis utilizando React Native.
 - GitHub
 
 ---
+
+## 🏗 Estrutura do Projeto
+
+```
+projeto-almoxarifado/
+│
+├── App.js
+├── package.json
+├── README.md
+├── assets/
+└── node_modules/
+```
+
+---
