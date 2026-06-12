@@ -127,7 +127,7 @@ git clone https://github.com/natieledpaula/prova-2b-dev-mobile-natieledpaula.git
 ### 2. Entrar na Pasta do Projeto
 
 ```bash
-cd nome-do-projeto
+cd prova-2b-dev-mobile-natieledpaula
 ```
 
 ### 3. Instalar Dependências
