@@ -19,3 +19,30 @@ A aplicação permite cadastrar materiais e visualizar o estoque de forma simple
 - Servir como base para futuras funcionalidades de gestão de estoque.
 
 ---
+
+## ⚙️ Funcionalidades da Sprint 1
+
+### ✅ Cadastro de Materiais
+
+Permite cadastrar novos materiais informando:
+
+- Nome do material
+- Quantidade disponível
+
+### ✅ Consulta de Estoque
+
+Exibe os materiais cadastrados através de uma lista dinâmica.
+
+### ✅ Integração com MockAPI
+
+Utiliza requisições HTTP para comunicação com a API.
+
+### ✅ Atualização Automática
+
+Ao abrir o aplicativo, os dados são carregados automaticamente utilizando o Hook `useEffect`.
+
+### ✅ Interface Mobile
+
+Aplicação desenvolvida para dispositivos móveis utilizando React Native.
+
+---
