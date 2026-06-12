@@ -136,6 +136,28 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:endpoint';
         color="#2196F3"
       />
       }
+
+    <FlatList
+      testID="lista-materiais"
+      data={materiais}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+
+    <View style={styles.card}>
+
+      <Text style={styles.materialNome}>
+        {item.nome}
+      </Text>
+
+      <Text>
+        Quantidade: {item.quantidade}
+      </Text>
+
+    </View>
+
+  )}
+/>
+      
       
     </View>
   );
