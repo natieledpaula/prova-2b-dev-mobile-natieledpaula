@@ -71,3 +71,15 @@ projeto-almoxarifado/
 ```
 
 ---
+
+## 🔄 Fluxo da Aplicação
+
+1. O usuário abre o aplicativo.
+2. O Hook `useEffect` executa automaticamente.
+3. É realizada uma requisição GET para a MockAPI.
+4. Os materiais são carregados na FlatList.
+5. O usuário preenche os campos Nome e Quantidade.
+6. Ao clicar em "Cadastrar", é enviada uma requisição POST.
+7. A lista é atualizada automaticamente.
+
+---
