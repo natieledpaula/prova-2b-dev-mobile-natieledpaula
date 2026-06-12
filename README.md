@@ -115,3 +115,38 @@ Os componentes obrigatórios foram implementados conforme solicitado pela ativid
 - Implementação dos testID obrigatórios.
 
 ---
+
+## 🚀 Como Executar o Projeto
+
+### 1. Clonar o Repositório
+
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+### 2. Entrar na Pasta do Projeto
+
+```bash
+cd nome-do-projeto
+```
+
+### 3. Instalar Dependências
+
+```bash
+npm install
+```
+
+### 4. Executar o Projeto
+
+```bash
+npx expo start
+```
+
+### 5. Abrir no Dispositivo
+
+- Expo Go (Android)
+- Emulador Android
+- Emulador iOS
+- Navegador Web
+
+---
