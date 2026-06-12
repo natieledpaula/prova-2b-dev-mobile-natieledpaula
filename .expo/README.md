@@ -1,12 +1,11 @@
-# Sistema de Controle de Estoque para Enfermagem
+# 📦 Sistema de Controle de Estoque para Laboratório de Enfermagem
 
-## Descrição
+## 📖 Sobre o Projeto
 
-Aplicativo desenvolvido em React Native para controle de estoque de materiais de enfermagem.
+Este projeto foi desenvolvido utilizando React Native com o objetivo de modernizar o controle de estoque do laboratório de enfermagem.
 
-## Funcionalidades
+Atualmente o controle é realizado por meio de planilhas Excel e anotações em papel, o que pode gerar retrabalho, erros de contagem e dificuldades na atualização em tempo real.
 
-- Cadastro de materiais
-- Listagem de materiais
-- Integração com MockAPI
-- Atualização automática da lista
+A aplicação permite cadastrar materiais e visualizar o estoque de forma simples, rápida e integrada a uma MockAPI.
+
+---
