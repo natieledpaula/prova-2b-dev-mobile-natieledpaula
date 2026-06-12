@@ -16,7 +16,7 @@ const [materiais, setMateriais] = useState([]);
 const [loading, setLoading] = useState(false);
 
 // URL da MockAPI
-const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/:materiais';
+const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
 
   // --- Funções de Requisição e Efeitos (Os alunos implementarão aqui) ---
 
