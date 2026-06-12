@@ -58,10 +58,8 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
 
     // Cria um objeto com os dados do novo material
     const novoMaterial = {
-
       nome,
       quantidade
-
     };
 
     // Envia os dados para a API
