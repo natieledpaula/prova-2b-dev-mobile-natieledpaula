@@ -83,3 +83,16 @@ projeto-almoxarifado/
 7. A lista é atualizada automaticamente.
 
 ---
+
+## 🧪 Test IDs Utilizados
+
+Os componentes obrigatórios foram implementados conforme solicitado pela atividade.
+
+| Componente | testID |
+|------------|---------|
+| Campo Nome | input-nome |
+| Campo Quantidade | input-quantidade |
+| Botão Cadastrar | btn-cadastrar |
+| Lista de Materiais | lista-materiais |
+
+---
