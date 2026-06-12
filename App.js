@@ -27,7 +27,7 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
       const response = await fetch(API_URL);
       const dados = await response.json();
       setMateriais(dados);
-    } catch (error) {
+    } catch (erro) {
       console.log(erro);
     } finally {
       setLoading(false);
@@ -82,7 +82,7 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
 
   } catch (erro) {
 
-    console.log(error);
+    console.log(erro);
 
   }
 
