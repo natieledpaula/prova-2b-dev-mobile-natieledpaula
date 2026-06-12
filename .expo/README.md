@@ -46,3 +46,14 @@ Ao abrir o aplicativo, os dados são carregados automaticamente utilizando o Hoo
 Aplicação desenvolvida para dispositivos móveis utilizando React Native.
 
 ---
+
+## 🛠 Tecnologias Utilizadas
+
+- React Native
+- JavaScript
+- Expo
+- MockAPI
+- Git
+- GitHub
+
+---
