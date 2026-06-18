@@ -352,14 +352,14 @@ const styles = StyleSheet.create({
   },
 
   botaoBaixar: {
-    backgroundColor: "#2E7D32",
+    backgroundColor: "rgba(46, 125, 50, 0.70)",
     padding: 14,
     borderRadius: 10,
     marginTop: 10,
   },
-  
+
   botaoExcluir: {
-    backgroundColor: "#D32F2F",
+    backgroundColor: "rgba(211, 47, 47, 0.70)",
     padding: 14,
     borderRadius: 10,
     marginTop: 10,
