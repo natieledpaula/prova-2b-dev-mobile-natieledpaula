@@ -251,18 +251,23 @@ const baixarEstoque = async (item) => {
       ...retirada,
       [item.id]: texto,
     })
-
   }
-/>
+  />
 
-    </View>
+    <TouchableOpacity
+    testID="btn-baixar"
+    style={styles.botaoBaixar}
+    onPress={() => baixarEstoque(item)}>
 
-  )}
-/>
-      
-      
+    <Text style={styles.textoBotao}>
+      Baixar Estoque
+    </Text>
+    </TouchableOpacity>
     </View>
-  );
+)}
+/>        
+  </View>
+);
 }
 
 const styles = StyleSheet.create({
