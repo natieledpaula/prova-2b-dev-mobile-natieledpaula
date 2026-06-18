@@ -338,4 +338,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+
+  botaoBaixar: {
+    backgroundColor: "green",
+    padding: 12,
+    borderRadius: 8,
+    marginTop: 10,
+  },
+
+  botaoExcluir: {
+    backgroundColor: "#f44336",
+    padding: 12,
+    borderRadius: 8,
+    marginTop: 10,
+  },
 });
