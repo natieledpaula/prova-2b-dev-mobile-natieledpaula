@@ -263,6 +263,17 @@ const baixarEstoque = async (item) => {
       Baixar Estoque
     </Text>
     </TouchableOpacity>
+
+    <TouchableOpacity
+    testID="btn-excluir"
+    style={styles.botaoExcluir}
+    onPress={() =>
+    excluirMaterial(item.id)}>
+
+    <Text style={styles.textoBotao}>
+      Excluir
+    </Text>
+    </TouchableOpacity>
     </View>
 )}
 />        
