@@ -94,6 +94,29 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
 
 };
 
+// Remove material da API
+const excluirMaterial = async (id) => {
+
+  try {
+
+    await fetch(`${API}/${id}`, {
+
+      method: "DELETE",
+
+    });
+
+    // Atualiza lista
+    buscarMateriais();
+
+    alert("Material removido!");
+
+  } catch (erro) {
+
+    console.log(erro);
+
+  }
+};
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
