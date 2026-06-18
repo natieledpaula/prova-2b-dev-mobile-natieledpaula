@@ -15,6 +15,11 @@ const [materiais, setMateriais] = useState([]);
 
 // Mostra carregamento enquanto busca dados
 const [loading, setLoading] = useState(false);
+// Guarda valor digitado na retirada
+const [retirada, setRetirada] = useState({
+  1: "5",
+  2: "10"
+});
 
 // URL da MockAPI
 const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
