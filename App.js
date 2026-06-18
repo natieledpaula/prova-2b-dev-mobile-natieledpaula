@@ -281,74 +281,87 @@ const baixarEstoque = async (item) => {
 }
 
 const styles = StyleSheet.create({
-
+  
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#EAF4FF",
     paddingTop: 50,
     paddingHorizontal: 20,
   },
 
   title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 10, // Reduzido ligeiramente para aproximar o texto explicativo
-    color: '#333',
+    fontSize: 28,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 10,
+    color: "#1565C0",
   },
 
   description: {
-    fontSize: 14,
-    color: '#666',
-    textAlign: 'center',
-    lineHeight: 20, // Dá um espaçamento confortável entre as linhas do parágrafo
-    marginBottom: 30, // Margem inferior para afastar o texto dos futuros inputs dos alunos
+    fontSize: 15,
+    color: "#555",
+    textAlign: "center",
+    lineHeight: 22, // Dá um espaçamento confortável entre as linhas do parágrafo
+    marginBottom: 25, // Margem inferior para afastar o texto dos futuros inputs dos alunos
+    backgroundColor: "#FFFFFF",
+    padding: 15,
+    borderRadius: 10,
+    elevation: 2,
   },
 
   input: {
+    backgroundColor: "#FFF",
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 10,
-    marginBottom: 10,
+    borderColor: "#BBDEFB",
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 12,
+    fontSize: 16,
   },
 
   button: {
-    backgroundColor: '#2196F3',
-    padding: 15,
-    borderRadius: 8,
+    backgroundColor: "#1976D2",
+    padding: 16,
+    borderRadius: 12,
     marginBottom: 20,
+    elevation: 3,
   },
 
   buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: 'bold',
+    color: "#FFF",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 16,
   },
 
   card: {
-    backgroundColor: '#f5f5f5',
-    padding: 12,
-    marginBottom: 10,
-    borderRadius: 8,
+    backgroundColor: "#FFF",
+    padding: 16,
+    marginBottom: 15,
+    borderRadius: 15,
+    elevation: 3,
+    borderLeftWidth: 6,
+    borderLeftColor: "#1976D2",
   },
 
   materialNome: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#0D47A1",
+    marginBottom: 5,
   },
 
   botaoBaixar: {
-    backgroundColor: "green",
-    padding: 12,
-    borderRadius: 8,
+    backgroundColor: "#2E7D32",
+    padding: 14,
+    borderRadius: 10,
     marginTop: 10,
   },
-
+  
   botaoExcluir: {
-    backgroundColor: "#f44336",
-    padding: 12,
-    borderRadius: 8,
+    backgroundColor: "#D32F2F",
+    padding: 14,
+    borderRadius: 10,
     marginTop: 10,
   },
 });
