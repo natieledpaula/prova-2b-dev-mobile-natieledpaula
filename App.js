@@ -117,6 +117,66 @@ const excluirMaterial = async (id) => {
   }
 };
 
+// Faz baixa no estoque
+const baixarEstoque = async (item) => {
+
+  // Valor digitado
+  const quantidadeRetirada =
+    retirada[item.id];
+
+  // Validação obrigatória
+  const podeRetirar =
+    validarRetirada(
+      item.quantidade,
+      quantidadeRetirada
+    );
+
+  // Bloqueia estoque negativo
+  if (!podeRetirar) {
+
+    alert("Quantidade inválida!");
+
+    return;
+  }
+
+  // Calcula novo estoque
+  const novoEstoque =
+    Number(item.quantidade) -
+    Number(quantidadeRetirada);
+
+  try {
+
+    // Atualiza API
+    await fetch(`${API}/${item.id}`, {
+
+      method: "PUT",
+
+      headers: {
+        "Content-Type":
+          "application/json",
+      },
+
+      body: JSON.stringify({
+
+        nome: item.nome,
+
+        quantidade: novoEstoque,
+
+      }),
+    });
+
+    // Atualiza lista
+    buscarMateriais();
+
+    alert("Baixa realizada!");
+
+  } catch (erro) {
+
+    console.log(erro);
+
+  }
+};
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
