@@ -99,7 +99,7 @@ const excluirMaterial = async (id) => {
 
   try {
 
-    await fetch(`${API}/${id}`, {
+    await fetch(`${API_URL}/${id}`, {
 
       method: "DELETE",
 
@@ -147,7 +147,7 @@ const baixarEstoque = async (item) => {
   try {
 
     // Atualiza API
-    await fetch(`${API}/${item.id}`, {
+    await fetch(`${API_URL}/${item.id}`, {
 
       method: "PUT",
 
@@ -267,13 +267,12 @@ const baixarEstoque = async (item) => {
     <TouchableOpacity
     testID="btn-excluir"
     style={styles.botaoExcluir}
-    onPress={() =>
-    excluirMaterial(item.id)}>
+    onPress={() => excluirMaterial(item.id)}>
 
-    <Text style={styles.textoBotao}>
-      Excluir
-    </Text>
-    </TouchableOpacity>
+  <Text style={styles.textoBotao}>
+    Excluir
+  </Text>
+  </TouchableOpacity>
     </View>
 )}
 />        
