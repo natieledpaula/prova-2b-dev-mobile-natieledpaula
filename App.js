@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
-import { validarRetirada } from "./utils";
+import { validarRetirada } from "./utils/estoque";
 
 export default function App() {
   // --- Estados da Aplicação (Os alunos implementarão aqui) ---
