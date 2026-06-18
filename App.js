@@ -240,6 +240,21 @@ const baixarEstoque = async (item) => {
         Quantidade: {item.quantidade}
       </Text>
 
+      <TextInput
+      testID="input-retirada"
+      placeholder="Quantidade retirada"
+      keyboardType="numeric"
+      style={styles.input}
+      value={retirada[item.id] || ""}
+      onChangeText={(texto) =>
+      setRetirada({
+      ...retirada,
+      [item.id]: texto,
+    })
+
+  }
+/>
+
     </View>
 
   )}
