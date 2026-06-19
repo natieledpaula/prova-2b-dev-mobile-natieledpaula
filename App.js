@@ -332,6 +332,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 16,
+    textAlignVertical: "center",
   },
 
   card: {
@@ -352,16 +353,22 @@ const styles = StyleSheet.create({
   },
 
   botaoBaixar: {
-    backgroundColor: "rgba(46, 125, 50, 0.70)",
+    backgroundColor: "rgba(46, 125, 50, 0.15)",
     padding: 14,
     borderRadius: 10,
     marginTop: 10,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "rgba(46, 125, 50, 0.35)",
   },
 
   botaoExcluir: {
-    backgroundColor: "rgba(211, 47, 47, 0.70)",
+    backgroundColor: "rgba(211, 47, 47, 0.15)",
     padding: 14,
     borderRadius: 10,
     marginTop: 10,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "rgba(211, 47, 47, 0.35)",
   },
 });
