@@ -271,5 +271,4 @@ npx expo start
 # 👩‍💻 Desenvolvedora
 
 **Natiele Nogueira**
-
 Projeto acadêmico desenvolvido para a disciplina de Desenvolvimento Mobile utilizando React Native.
