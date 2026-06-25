@@ -95,6 +95,17 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
 
   }
 
+  // Filtra materiais conforme pesquisa
+  const materiaisFiltrados = materiais.filter(
+    (item) =>
+
+    item.nome
+      .toLowerCase()
+      .includes(
+        busca.toLowerCase()
+      )
+  );
+
 };
 
 // Remove material da API
