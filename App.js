@@ -13,6 +13,9 @@ const [quantidade, setQuantidade] = useState('');
 // Guarda os materiais vindos da API
 const [materiais, setMateriais] = useState([]);
 
+// Guarda o texto da pesquisa
+const [busca, setBusca] = useState('');
+
 // Mostra carregamento enquanto busca dados
 const [loading, setLoading] = useState(false);
 // Guarda valor digitado na retirada
