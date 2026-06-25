@@ -47,6 +47,7 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
       setMateriais(dados);
     } catch (erro) {
       console.log(erro);
+      alert("Erro de conexão com o servidor.");
     } finally {
       setLoading(false);
     }
@@ -99,9 +100,8 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
     buscarMateriais();
 
   } catch (erro) {
-
     console.log(erro);
-
+    alert("Erro de conexão com o servidor.");
   }
 
 };
@@ -123,9 +123,8 @@ const excluirMaterial = async (id) => {
     alert("Material removido!");
 
   } catch (erro) {
-
     console.log(erro);
-
+    alert("Erro de conexão com o servidor.");
   }
 };
 
@@ -183,9 +182,8 @@ const baixarEstoque = async (item) => {
     alert("Baixa realizada!");
 
   } catch (erro) {
-
     console.log(erro);
-
+    alert("Erro de conexão com o servidor.");
   }
 };
 
