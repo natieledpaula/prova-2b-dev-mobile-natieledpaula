@@ -95,17 +95,6 @@ const API_URL = 'https://6a18c3b523c3626470ac002f.mockapi.io/api/v1/materiais';
 
   }
 
-  // Filtra materiais conforme pesquisa
-  const materiaisFiltrados = materiais.filter(
-    (item) =>
-
-    item.nome
-      .toLowerCase()
-      .includes(
-        busca.toLowerCase()
-      )
-  );
-
 };
 
 // Remove material da API
@@ -191,6 +180,17 @@ const baixarEstoque = async (item) => {
   }
 };
 
+// Filtra materiais conforme pesquisa
+const materiaisFiltrados = materiais.filter(
+    (item) =>
+
+    item.nome
+      .toLowerCase()
+      .includes(
+        busca.toLowerCase()
+      )
+);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
@@ -217,6 +217,14 @@ const baixarEstoque = async (item) => {
         keyboardType="numeric"
         value={quantidade}
         onChangeText={setQuantidade}
+        style={styles.input}
+      />
+
+      <TextInput
+        testID="input-busca"
+        placeholder="Pesquisar material..."
+        value={busca}
+        onChangeText={setBusca}
         style={styles.input}
       />
 
