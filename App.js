@@ -235,6 +235,10 @@ const materiaisFiltrados = materiais.filter(
         style={styles.input}
       />
 
+      <Text testID="total-itens" style={styles.totalItens}>
+        Exibindo {materiaisFiltrados.length} item(ns)
+      </Text>
+
       <TouchableOpacity
         testID="btn-cadastrar"
         style={styles.button}
