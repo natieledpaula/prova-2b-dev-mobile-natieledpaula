@@ -280,6 +280,8 @@ const materiaisFiltrados = materiais.filter(
       : ""
   }>
 
+      <View style={{ marginBottom: 10 }}>
+
       <Text style={styles.materialNome}>
         {item.nome}
       </Text>
@@ -287,6 +289,8 @@ const materiaisFiltrados = materiais.filter(
       <Text style={styles.quantidadeTexto}>
         Quantidade disponível: {item.quantidade}
       </Text>
+
+      </View>
 
       <TextInput
       testID="input-retirada"
@@ -302,25 +306,29 @@ const materiaisFiltrados = materiais.filter(
   }
   />
 
-    <TouchableOpacity
-    testID="btn-baixar"
-    style={styles.botaoBaixar}
-    onPress={() => baixarEstoque(item)}>
+      <TouchableOpacity
+        testID="btn-baixar"
+        style={styles.botaoBaixar}
+        onPress={() => baixarEstoque(item)}
+      >
 
-    <Text style={styles.textoBotao}>
-      Baixar Estoque
-    </Text>
-    </TouchableOpacity>
+      <Text style={styles.buttonText}>
+        ➖ Baixar Estoque
+      </Text>
 
-    <TouchableOpacity
-    testID="btn-excluir"
-    style={styles.botaoExcluir}
-    onPress={() => excluirMaterial(item.id)}>
+      </TouchableOpacity>
 
-  <Text style={styles.textoBotao}>
-    Excluir
-  </Text>
-  </TouchableOpacity>
+      <TouchableOpacity
+        testID="btn-excluir"
+        style={styles.botaoExcluir}
+        onPress={() => excluirMaterial(item.id)}
+      >
+
+      <Text style={styles.buttonText}>
+        🗑 Excluir Material
+      </Text>
+
+      </TouchableOpacity>
     </View>
 )}
 />        
@@ -332,7 +340,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#EAF6FF",
+    backgroundColor: "#F1F8F4",
     paddingTop: 50,
     paddingHorizontal: 18,
   },
@@ -340,9 +348,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "#0277BD",
+    color: "#1B5E20",
     textAlign: "center",
-    marginBottom: 12,
+    marginBottom: 10,
+    letterSpacing: 1,
   },
 
   description: {
@@ -350,7 +359,7 @@ const styles = StyleSheet.create({
     padding: 18,
     borderRadius: 18,
     fontSize: 14,
-    color: "#546E7A",
+    color: "#4E6E5D",
     lineHeight: 22,
     textAlign: "center",
     marginBottom: 22,
@@ -361,7 +370,7 @@ const styles = StyleSheet.create({
       height: 2,
     },
 
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.05,
     shadowRadius: 4,
 
     elevation: 3,
@@ -373,7 +382,7 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 14,
     borderWidth: 1,
-    borderColor: "#B3E5FC",
+    borderColor: "#C8E6C9",
     fontSize: 16,
     color: "#263238",
 
@@ -383,26 +392,26 @@ const styles = StyleSheet.create({
       height: 1,
     },
 
-    shadowOpacity: 0.04,
+    shadowOpacity: 0.03,
     shadowRadius: 2,
 
     elevation: 1,
   },
 
   button: {
-    backgroundColor: "#0288D1",
-    padding: 16,
+    backgroundColor: "#2E7D32",
+    padding: 17,
     borderRadius: 16,
     alignItems: "center",
     marginBottom: 22,
 
-    shadowColor: "#0288D1",
+    shadowColor: "#2E7D32",
     shadowOffset: {
       width: 0,
       height: 3,
     },
 
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.20,
     shadowRadius: 4,
 
     elevation: 4,
@@ -415,14 +424,16 @@ const styles = StyleSheet.create({
   },
 
   totalItens: {
-    backgroundColor: "#DFF3FF",
-    color: "#0277BD",
+    backgroundColor: "#E8F5E9",
+    color: "#1B5E20",
     fontSize: 18,
     fontWeight: "bold",
     padding: 14,
-    borderRadius: 14,
+    borderRadius: 16,
     textAlign: "center",
     marginBottom: 18,
+    borderWidth: 1,
+    borderColor: "#C8E6C9",
   },
 
   card: {
@@ -432,7 +443,7 @@ const styles = StyleSheet.create({
     marginBottom: 18,
 
     borderLeftWidth: 7,
-    borderLeftColor: "#03A9F4",
+    borderLeftColor: "#43A047",
 
     shadowColor: "#000",
     shadowOffset: {
@@ -440,47 +451,48 @@ const styles = StyleSheet.create({
       height: 2,
     },
 
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.06,
     shadowRadius: 4,
 
     elevation: 3,
   },
 
   cardCritico: {
-    backgroundColor: "#FFF1F1",
-    borderLeftColor: "#E53935",
+    backgroundColor: "#FFF5F5",
+    borderLeftColor: "#D32F2F",
   },
 
   materialNome: {
     fontSize: 21,
     fontWeight: "bold",
-    color: "#01579B",
+    color: "#1B5E20",
     marginBottom: 8,
   },
 
   quantidadeTexto: {
     fontSize: 15,
-    color: "#455A64",
+    color: "#546E7A",
     marginBottom: 10,
+    fontWeight: "500",
   },
 
   botaoBaixar: {
-    backgroundColor: "rgba(76, 175, 80, 0.12)",
+    backgroundColor: "rgba(46, 125, 50, 0.10)",
     padding: 15,
     borderRadius: 14,
     marginTop: 12,
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "rgba(76, 175, 80, 0.35)",
+    borderColor: "rgba(46, 125, 50, 0.25)",
   },
 
   botaoExcluir: {
-    backgroundColor: "rgba(244, 67, 54, 0.12)",
+    backgroundColor: "rgba(211, 47, 47, 0.10)",
     padding: 15,
     borderRadius: 14,
     marginTop: 12,
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "rgba(244, 67, 54, 0.35)",
+    borderColor: "rgba(211, 47, 47, 0.25)",
   },
 });
