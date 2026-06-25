@@ -109,6 +109,60 @@ A interface recebeu melhorias de estilização:
 
 ---
 
+# ⚙️ Funcionalidades da Sprint 3
+
+## ✅ Pesquisa em Tempo Real
+
+Foi implementado um campo de pesquisa para localizar materiais rapidamente.
+
+A busca funciona em tempo real conforme o usuário digita no campo de pesquisa.
+
+---
+
+## ✅ Dashboard de Totalização
+
+O aplicativo exibe dinamicamente a quantidade total de materiais listados na tela.
+
+Foi utilizado o componente:
+
+```jsx
+testID="total-itens"
+```
+
+para atender aos requisitos da atividade.
+
+---
+
+## ✅ Indicador de Estoque Crítico
+
+Materiais com quantidade menor que 10 recebem automaticamente um alerta visual na interface.
+
+O card do item muda de cor para indicar baixo estoque, melhorando a identificação de materiais críticos.
+
+Também foi implementado:
+
+```jsx
+accessibilityLabel="estoque-critico"
+```
+
+conforme solicitado no contrato técnico.
+
+---
+
+## ✅ Melhorias na Interface
+
+A Sprint 3 também trouxe melhorias visuais importantes:
+
+- Dashboard moderno
+- Pesquisa integrada
+- Alertas visuais
+- Botões centralizados
+- Transparência nos botões
+- Layout mais limpo
+- Melhor experiência do usuário
+
+---
+
 # 🛠 Tecnologias Utilizadas
 
 - React Native
@@ -265,6 +319,33 @@ npx expo start
 - Emulador Android
 - Emulador iOS
 - Navegador Web
+
+---
+
+# 🔗 Repositório Oficial
+
+```bash
+https://github.com/natieledpaula/prova-2b-dev-mobile-natieledpaula
+```
+
+---
+
+# 💼 Relato da Trajetória do Projeto
+
+Durante o desenvolvimento deste projeto foi possível aplicar conhecimentos importantes de desenvolvimento mobile utilizando React Native.
+
+Ao longo das sprints foram implementadas funcionalidades fundamentais para um sistema de controle de estoque, incluindo:
+
+- Integração com API
+- Cadastro de materiais
+- Atualização dinâmica
+- Controle de estoque
+- Validação de regras de negócio
+- Dashboard
+- Tratamento de erros
+- Melhorias de interface
+
+O projeto contribuiu significativamente para a prática de conceitos como componentização, estados, hooks, requisições HTTP, estilização mobile e versionamento com Git/GitHub.
 
 ---
 
