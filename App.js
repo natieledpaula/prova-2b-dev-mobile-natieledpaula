@@ -329,108 +329,158 @@ const materiaisFiltrados = materiais.filter(
 }
 
 const styles = StyleSheet.create({
-  
+
   container: {
     flex: 1,
-    backgroundColor: "#EAF4FF",
+    backgroundColor: "#EAF6FF",
     paddingTop: 50,
-    paddingHorizontal: 20,
+    paddingHorizontal: 18,
   },
 
   title: {
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: "bold",
+    color: "#0277BD",
     textAlign: "center",
-    marginBottom: 10,
-    color: "#1565C0",
+    marginBottom: 12,
   },
 
   description: {
-    fontSize: 15,
-    color: "#555",
-    textAlign: "center",
-    lineHeight: 22, // Dá um espaçamento confortável entre as linhas do parágrafo
-    marginBottom: 25, // Margem inferior para afastar o texto dos futuros inputs dos alunos
     backgroundColor: "#FFFFFF",
-    padding: 15,
-    borderRadius: 10,
-    elevation: 2,
+    padding: 18,
+    borderRadius: 18,
+    fontSize: 14,
+    color: "#546E7A",
+    lineHeight: 22,
+    textAlign: "center",
+    marginBottom: 22,
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+
+    elevation: 3,
   },
 
   input: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 16,
+    padding: 15,
+    marginBottom: 14,
     borderWidth: 1,
-    borderColor: "#BBDEFB",
-    borderRadius: 12,
-    padding: 14,
-    marginBottom: 12,
+    borderColor: "#B3E5FC",
     fontSize: 16,
+    color: "#263238",
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+
+    shadowOpacity: 0.04,
+    shadowRadius: 2,
+
+    elevation: 1,
   },
 
   button: {
-    backgroundColor: "#1976D2",
+    backgroundColor: "#0288D1",
     padding: 16,
-    borderRadius: 12,
-    marginBottom: 20,
-    elevation: 3,
+    borderRadius: 16,
+    alignItems: "center",
+    marginBottom: 22,
+
+    shadowColor: "#0288D1",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+
+    elevation: 4,
   },
 
   buttonText: {
-    color: "#FFF",
-    textAlign: "center",
-    fontWeight: "bold",
+    color: "#FFFFFF",
     fontSize: 16,
-    textAlignVertical: "center",
-  },
-
-  card: {
-    backgroundColor: "#FFF",
-    padding: 16,
-    marginBottom: 15,
-    borderRadius: 15,
-    elevation: 3,
-    borderLeftWidth: 6,
-    borderLeftColor: "#1976D2",
-  },
-
-  materialNome: {
-    fontSize: 20,
     fontWeight: "bold",
-    color: "#0D47A1",
-    marginBottom: 5,
-  },
-
-  botaoBaixar: {
-    backgroundColor: "rgba(46, 125, 50, 0.15)",
-    padding: 14,
-    borderRadius: 10,
-    marginTop: 10,
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "rgba(46, 125, 50, 0.35)",
-  },
-
-  botaoExcluir: {
-    backgroundColor: "rgba(211, 47, 47, 0.15)",
-    padding: 14,
-    borderRadius: 10,
-    marginTop: 10,
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "rgba(211, 47, 47, 0.35)",
-  },
-
-  cardCritico: {
-    backgroundColor: "#FFEBEE",
-    borderLeftColor: "#D32F2F",
-    borderLeftWidth: 6,
   },
 
   totalItens: {
+    backgroundColor: "#DFF3FF",
+    color: "#0277BD",
     fontSize: 18,
     fontWeight: "bold",
-    color: "#1565C0",
-    marginBottom: 15,
+    padding: 14,
+    borderRadius: 14,
     textAlign: "center",
+    marginBottom: 18,
+  },
+
+  card: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 22,
+    padding: 18,
+    marginBottom: 18,
+
+    borderLeftWidth: 7,
+    borderLeftColor: "#03A9F4",
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+
+    elevation: 3,
+  },
+
+  cardCritico: {
+    backgroundColor: "#FFF1F1",
+    borderLeftColor: "#E53935",
+  },
+
+  materialNome: {
+    fontSize: 21,
+    fontWeight: "bold",
+    color: "#01579B",
+    marginBottom: 8,
+  },
+
+  quantidadeTexto: {
+    fontSize: 15,
+    color: "#455A64",
+    marginBottom: 10,
+  },
+
+  botaoBaixar: {
+    backgroundColor: "rgba(76, 175, 80, 0.12)",
+    padding: 15,
+    borderRadius: 14,
+    marginTop: 12,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "rgba(76, 175, 80, 0.35)",
+  },
+
+  botaoExcluir: {
+    backgroundColor: "rgba(244, 67, 54, 0.12)",
+    padding: 15,
+    borderRadius: 14,
+    marginTop: 12,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "rgba(244, 67, 54, 0.35)",
   },
 });
