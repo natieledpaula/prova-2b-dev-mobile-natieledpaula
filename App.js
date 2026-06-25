@@ -284,8 +284,8 @@ const materiaisFiltrados = materiais.filter(
         {item.nome}
       </Text>
 
-      <Text>
-        Quantidade: {item.quantidade}
+      <Text style={styles.quantidadeTexto}>
+        Quantidade disponível: {item.quantidade}
       </Text>
 
       <TextInput
