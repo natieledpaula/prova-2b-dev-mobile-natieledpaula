@@ -421,4 +421,12 @@ const styles = StyleSheet.create({
     borderLeftColor: "#D32F2F",
     borderLeftWidth: 6,
   },
+
+  totalItens: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#1565C0",
+    marginBottom: 15,
+    textAlign: "center",
+  },
 });
