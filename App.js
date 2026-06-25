@@ -417,4 +417,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "rgba(211, 47, 47, 0.35)",
   },
+
+  cardCritico: {
+    backgroundColor: "#FFEBEE",
+    borderLeftColor: "#D32F2F",
+    borderLeftWidth: 6,
+  },
 });
