@@ -261,7 +261,22 @@ const materiaisFiltrados = materiais.filter(
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
 
-    <View style={styles.card}>
+    <View
+
+  style={[
+
+    styles.card,
+
+    Number(item.quantidade) < 10 &&
+      styles.cardCritico
+
+  ]}
+
+  accessibilityLabel={
+    Number(item.quantidade) < 10
+      ? "estoque-critico"
+      : ""
+  }>
 
       <Text style={styles.materialNome}>
         {item.nome}
