@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TextInput, 
+  TouchableOpacity, 
+  FlatList, 
+  ActivityIndicator 
+} from 'react-native';
 import { validarRetirada } from "./utils/estoque";
 
 export default function App() {
-  // --- Estados da Aplicação (Os alunos implementarão aqui) ---
-  // Guarda o nome digitado
+// --- Estados da Aplicação (Os alunos implementarão aqui) ---
+// Guarda o nome digitado
 const [nome, setNome] = useState('');
 
 // Guarda a quantidade digitada
@@ -18,6 +26,7 @@ const [busca, setBusca] = useState('');
 
 // Mostra carregamento enquanto busca dados
 const [loading, setLoading] = useState(false);
+
 // Guarda valor digitado na retirada
 const [retirada, setRetirada] = useState({
   1: "5",
@@ -248,7 +257,7 @@ const materiaisFiltrados = materiais.filter(
 
     <FlatList
       testID="lista-materiais"
-      data={materiais}
+      data={materiaisFiltrados}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
 
