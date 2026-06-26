@@ -199,448 +199,333 @@ const materiaisFiltrados = materiais.filter(
 );
 
 return (
-
-<View style={styles.container}>
-
-  {/* HEADER */}
-  <View style={styles.header}>
-
-    <Text style={styles.title}>
-      🏥 Almoxarifado Hospitalar
-    </Text>
-
-    <Text style={styles.subtitle}>
-      Controle inteligente de materiais médicos
-    </Text>
-
-  </View>
-
-  {/* CARD DESCRIÇÃO */}
-  <View style={styles.infoCard}>
-
-    <Text style={styles.description}>
-      Sistema responsável pelo controle
-      de estoque hospitalar em tempo real,
-      permitindo cadastro, baixa e
-      monitoramento de materiais médicos.
-    </Text>
-
-  </View>
-
-  {/* FORMULÁRIO */}
-  <View style={styles.formContainer}>
-
-    <Text style={styles.sectionTitle}>
-      Cadastro de Material
-    </Text>
-
-    <TextInput
-      testID="input-nome"
-      placeholder="Nome do Material"
-      value={nome}
-      onChangeText={setNome}
-      style={styles.input}
-    />
-
-    <TextInput
-      testID="input-quantidade"
-      placeholder="Quantidade"
-      keyboardType="numeric"
-      value={quantidade}
-      onChangeText={setQuantidade}
-      style={styles.input}
-    />
-
-    <TouchableOpacity
-      testID="btn-cadastrar"
-      style={styles.button}
-      onPress={cadastrarMaterial}
-    >
-
-      <Text style={styles.buttonText}>
-        ➕ Cadastrar Material
-      </Text>
-
-    </TouchableOpacity>
-
-  </View>
-
-  {/* PESQUISA */}
-  <View style={styles.searchContainer}>
-
-    <Text style={styles.sectionTitle}>
-      Pesquisa de Materiais
-    </Text>
-
-    <TextInput
-      testID="input-busca"
-      placeholder="Pesquisar material..."
-      value={busca}
-      onChangeText={setBusca}
-      style={styles.input}
-    />
-
-  </View>
-
-  {/* DASHBOARD */}
-  <Text
-    testID="total-itens"
-    style={styles.totalItens}
-  >
-    📦 Total de materiais: {materiaisFiltrados.length}
-  </Text>
-
-  {/* LOADING */}
-  {
-    loading && (
-      <ActivityIndicator
-        size="large"
-        color="#2E7D32"
-      />
-    )
-  }
-
-  {/* LISTA */}
-  <FlatList
-
-    testID="lista-materiais"
-
-    data={materiaisFiltrados}
-
-    keyExtractor={(item) => item.id}
-
-    showsVerticalScrollIndicator={false}
-
-    renderItem={({ item }) => (
-
-      <View
-
-        style={[
-
-          styles.card,
-
-          Number(item.quantidade) < 10 &&
-          styles.cardCritico
-
-        ]}
-
-        accessibilityLabel={
-          Number(item.quantidade) < 10
-            ? "estoque-critico"
-            : ""
-        }
-
-      >
-
-        {/* NOME */}
-        <View style={styles.cardHeader}>
-
-          <Text style={styles.materialNome}>
-            {item.nome}
-          </Text>
-
-        </View>
-
-        {/* QUANTIDADE */}
-        <Text style={styles.quantidadeTexto}>
-          Quantidade disponível: {item.quantidade}
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Almoxarifado Hospitalar</Text>
+        <Text style={styles.subtitle}>
+          Controle de materiais médicos e estoque
         </Text>
-
-        {/* INPUT RETIRADA */}
-        <TextInput
-
-          testID="input-retirada"
-
-          placeholder="Quantidade retirada"
-
-          keyboardType="numeric"
-
-          style={styles.inputRetirada}
-
-          value={retirada[item.id] || ""}
-
-          onChangeText={(texto) =>
-
-            setRetirada({
-
-              ...retirada,
-
-              [item.id]: texto,
-
-            })
-          }
-        />
-
-        {/* BOTÃO BAIXAR */}
-        <TouchableOpacity
-
-          testID="btn-baixar"
-
-          style={styles.botaoBaixar}
-
-          onPress={() =>
-            baixarEstoque(item)
-          }
-
-        >
-
-          <Text style={styles.buttonText}>
-            ➖ Baixar Estoque
-          </Text>
-
-        </TouchableOpacity>
-
-        {/* BOTÃO EXCLUIR */}
-        <TouchableOpacity
-
-          testID="btn-excluir"
-
-          style={styles.botaoExcluir}
-
-          onPress={() =>
-            excluirMaterial(item.id)
-          }
-
-        >
-
-          <Text style={styles.buttonText}>
-            🗑 Excluir Material
-          </Text>
-
-        </TouchableOpacity>
-
       </View>
 
-    )}
+      <View style={styles.dashboardCard}>
+        <Text style={styles.dashboardLabel}>Materiais cadastrados</Text>
+        <Text testID="total-itens" style={styles.dashboardNumber}>
+          {materiaisFiltrados.length}
+        </Text>
+        <Text style={styles.dashboardText}>Itens disponíveis no sistema</Text>
+      </View>
 
-  />
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Cadastro de Material</Text>
 
-</View>
-);
+        <TextInput
+          testID="input-nome"
+          placeholder="Digite o nome do material"
+          value={nome}
+          onChangeText={setNome}
+          style={styles.input}
+          placeholderTextColor="#8A98A8"
+        />
+
+        <TextInput
+          testID="input-quantidade"
+          placeholder="Digite a quantidade"
+          keyboardType="numeric"
+          value={quantidade}
+          onChangeText={setQuantidade}
+          style={styles.input}
+          placeholderTextColor="#8A98A8"
+        />
+
+        <TouchableOpacity
+          testID="btn-cadastrar"
+          style={styles.primaryButton}
+          onPress={cadastrarMaterial}
+        >
+          <Text style={styles.primaryButtonText}>Cadastrar Material</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Pesquisar Material</Text>
+
+        <TextInput
+          testID="input-busca"
+          placeholder="Buscar por nome..."
+          value={busca}
+          onChangeText={setBusca}
+          style={styles.input}
+          placeholderTextColor="#8A98A8"
+        />
+      </View>
+
+      {loading && <ActivityIndicator size="large" color="#0F766E" />}
+
+      <FlatList
+        testID="lista-materiais"
+        data={materiaisFiltrados}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.listContent}
+        renderItem={({ item }) => (
+          <View
+            style={[
+              styles.card,
+              Number(item.quantidade) < 10 && styles.cardCritico,
+            ]}
+            accessibilityLabel={
+              Number(item.quantidade) < 10 ? "estoque-critico" : ""
+            }
+          >
+            <View style={styles.cardHeader}>
+              <Text style={styles.materialNome}>{item.nome}</Text>
+
+              <Text
+                style={[
+                  styles.statusBadge,
+                  Number(item.quantidade) < 10 && styles.statusCritico,
+                ]}
+              >
+                {Number(item.quantidade) < 10 ? "Crítico" : "Normal"}
+              </Text>
+            </View>
+
+            <Text style={styles.quantidadeTexto}>Quantidade disponível</Text>
+
+            <Text style={styles.quantidadeNumero}>{item.quantidade}</Text>
+
+            <TextInput
+              testID="input-retirada"
+              placeholder="Quantidade para retirada"
+              keyboardType="numeric"
+              style={styles.inputRetirada}
+              value={retirada[item.id] || ""}
+              onChangeText={(texto) =>
+                setRetirada({
+                  ...retirada,
+                  [item.id]: texto,
+                })
+              }
+              placeholderTextColor="#8A98A8"
+            />
+
+            <TouchableOpacity
+              testID="btn-baixar"
+              style={styles.secondaryButton}
+              onPress={() => baixarEstoque(item)}
+            >
+              <Text style={styles.secondaryButtonText}>Baixar Estoque</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              testID="btn-excluir"
+              style={styles.dangerButton}
+              onPress={() => excluirMaterial(item.id)}
+            >
+              <Text style={styles.dangerButtonText}>Excluir Material</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      />
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
-    backgroundColor: "#F1F8F4",
+    backgroundColor: "#F4F7FB",
     paddingTop: 50,
     paddingHorizontal: 18,
   },
 
-  title: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "#1B5E20",
-    textAlign: "center",
-    marginBottom: 10,
-    letterSpacing: 1,
+  header: {
+    marginBottom: 18,
   },
 
-  description: {
-    backgroundColor: "#FFFFFF",
-    padding: 18,
-    borderRadius: 18,
-    fontSize: 14,
-    color: "#4E6E5D",
-    lineHeight: 22,
+  title: {
+    fontSize: 28,
+    fontWeight: "800",
+    color: "#102A43",
     textAlign: "center",
-    marginBottom: 22,
+  },
 
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
+  subtitle: {
+    fontSize: 15,
+    color: "#627D98",
+    textAlign: "center",
+    marginTop: 6,
+  },
 
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
+  dashboardCard: {
+    backgroundColor: "#0F766E",
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 18,
+  },
 
-    elevation: 3,
+  dashboardLabel: {
+    color: "#CCFBF1",
+    fontSize: 14,
+    fontWeight: "600",
+  },
+
+  dashboardNumber: {
+    color: "#FFFFFF",
+    fontSize: 38,
+    fontWeight: "900",
+    marginTop: 4,
+  },
+
+  dashboardText: {
+    color: "#E0F2F1",
+    fontSize: 14,
+    marginTop: 4,
+  },
+
+  section: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 18,
+    padding: 16,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: "#E2E8F0",
+    elevation: 2,
+  },
+
+  sectionTitle: {
+    fontSize: 17,
+    fontWeight: "700",
+    color: "#102A43",
+    marginBottom: 12,
   },
 
   input: {
-    backgroundColor: "#FFFFFF",
-    borderRadius: 16,
-    padding: 15,
-    marginBottom: 14,
+    backgroundColor: "#F8FAFC",
     borderWidth: 1,
-    borderColor: "#C8E6C9",
-    fontSize: 16,
-    color: "#263238",
-
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-
-    shadowOpacity: 0.03,
-    shadowRadius: 2,
-
-    elevation: 1,
-  },
-
-  button: {
-    backgroundColor: "#2E7D32",
-    padding: 17,
-    borderRadius: 16,
-    alignItems: "center",
-    marginBottom: 22,
-
-    shadowColor: "#2E7D32",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-
-    shadowOpacity: 0.20,
-    shadowRadius: 4,
-
-    elevation: 4,
-  },
-
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-
-  totalItens: {
-    backgroundColor: "#E8F5E9",
-    color: "#1B5E20",
-    fontSize: 18,
-    fontWeight: "bold",
+    borderColor: "#CBD5E1",
+    borderRadius: 12,
     padding: 14,
-    borderRadius: 16,
-    textAlign: "center",
-    marginBottom: 18,
-    borderWidth: 1,
-    borderColor: "#C8E6C9",
+    fontSize: 15,
+    color: "#102A43",
+    marginBottom: 12,
+  },
+
+  primaryButton: {
+    backgroundColor: "#0F766E",
+    padding: 15,
+    borderRadius: 12,
+    alignItems: "center",
+    marginTop: 4,
+  },
+
+  primaryButtonText: {
+    color: "#FFFFFF",
+    fontSize: 15,
+    fontWeight: "700",
+  },
+
+  listContent: {
+    paddingBottom: 30,
   },
 
   card: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 22,
-    padding: 18,
-    marginBottom: 18,
-
-    borderLeftWidth: 7,
-    borderLeftColor: "#43A047",
-
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-
-    shadowOpacity: 0.06,
-    shadowRadius: 4,
-
-    elevation: 3,
+    borderRadius: 18,
+    padding: 16,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: "#E2E8F0",
+    borderLeftWidth: 6,
+    borderLeftColor: "#0F766E",
+    elevation: 2,
   },
 
   cardCritico: {
-    backgroundColor: "#FFF5F5",
-    borderLeftColor: "#D32F2F",
+    borderLeftColor: "#DC2626",
+    backgroundColor: "#FFF7F7",
+  },
+
+  cardHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 
   materialNome: {
-    fontSize: 21,
-    fontWeight: "bold",
-    color: "#1B5E20",
-    marginBottom: 8,
+    fontSize: 19,
+    fontWeight: "800",
+    color: "#102A43",
+    flex: 1,
+  },
+
+  statusBadge: {
+    backgroundColor: "#D1FAE5",
+    color: "#047857",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 20,
+    fontSize: 12,
+    fontWeight: "700",
+  },
+
+  statusCritico: {
+    backgroundColor: "#FEE2E2",
+    color: "#B91C1C",
   },
 
   quantidadeTexto: {
+    fontSize: 14,
+    color: "#64748B",
+    marginTop: 14,
+  },
+
+  quantidadeNumero: {
+    fontSize: 28,
+    fontWeight: "900",
+    color: "#0F172A",
+    marginBottom: 12,
+  },
+
+  inputRetirada: {
+    backgroundColor: "#F8FAFC",
+    borderWidth: 1,
+    borderColor: "#CBD5E1",
+    borderRadius: 12,
+    padding: 13,
     fontSize: 15,
-    color: "#546E7A",
+    color: "#102A43",
+    marginBottom: 12,
+  },
+
+  secondaryButton: {
+    backgroundColor: "#ECFDF5",
+    borderWidth: 1,
+    borderColor: "#99F6E4",
+    padding: 14,
+    borderRadius: 12,
+    alignItems: "center",
     marginBottom: 10,
-    fontWeight: "500",
   },
 
-  botaoBaixar: {
-    backgroundColor: "rgba(46, 125, 50, 0.10)",
-    padding: 15,
-    borderRadius: 14,
-    marginTop: 12,
-    alignItems: "center",
+  secondaryButtonText: {
+    color: "#0F766E",
+    fontSize: 15,
+    fontWeight: "700",
+  },
+
+  dangerButton: {
+    backgroundColor: "#FEF2F2",
     borderWidth: 1,
-    borderColor: "rgba(46, 125, 50, 0.25)",
-  },
-
-  botaoExcluir: {
-    backgroundColor: "rgba(211, 47, 47, 0.10)",
-    padding: 15,
-    borderRadius: 14,
-    marginTop: 12,
+    borderColor: "#FECACA",
+    padding: 14,
+    borderRadius: 12,
     alignItems: "center",
-    borderWidth: 1,
-    borderColor: "rgba(211, 47, 47, 0.25)",
   },
 
-  header: {
-  marginBottom: 20,
-},
-
-subtitle: {
-  textAlign: "center",
-  color: "#4E6E5D",
-  fontSize: 15,
-  marginTop: 5,
-},
-
-infoCard: {
-  backgroundColor: "#FFFFFF",
-  padding: 18,
-  borderRadius: 18,
-  marginBottom: 20,
-
-  shadowColor: "#000",
-  shadowOffset: {
-    width: 0,
-    height: 2,
+  dangerButtonText: {
+    color: "#DC2626",
+    fontSize: 15,
+    fontWeight: "700",
   },
-
-  shadowOpacity: 0.05,
-  shadowRadius: 4,
-
-  elevation: 3,
-},
-
-formContainer: {
-  backgroundColor: "#FFFFFF",
-  padding: 18,
-  borderRadius: 20,
-  marginBottom: 20,
-},
-
-searchContainer: {
-  backgroundColor: "#FFFFFF",
-  padding: 18,
-  borderRadius: 20,
-  marginBottom: 20,
-},
-
-sectionTitle: {
-  fontSize: 18,
-  fontWeight: "bold",
-  color: "#1B5E20",
-  marginBottom: 15,
-},
-
-cardHeader: {
-  marginBottom: 8,
-},
-
-inputRetirada: {
-  backgroundColor: "#F7FAF8",
-  borderRadius: 14,
-  padding: 14,
-  marginTop: 10,
-  marginBottom: 12,
-  borderWidth: 1,
-  borderColor: "#DCEEDD",
-  fontSize: 15,
-},
 });
-}
