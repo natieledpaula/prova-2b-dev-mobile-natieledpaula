@@ -198,143 +198,229 @@ const materiaisFiltrados = materiais.filter(
       )
 );
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Almoxarifado - Enfermagem</Text>
-      
-      {/* Breve descrição do projeto inserida abaixo */}
-      <Text style={styles.description}>
-        Este template servirá para desenvolver o projeto responsável por modernizar o controle de insumos médicos do almoxarifado. 
-        Através desta interface conectada à API, é possível realizar o inventário em tempo real, cadastrar novos materiais e registrar baixas de estoque de forma ágil e segura.
+return (
+
+<View style={styles.container}>
+
+  {/* HEADER */}
+  <View style={styles.header}>
+
+    <Text style={styles.title}>
+      🏥 Almoxarifado Hospitalar
+    </Text>
+
+    <Text style={styles.subtitle}>
+      Controle inteligente de materiais médicos
+    </Text>
+
+  </View>
+
+  {/* CARD DESCRIÇÃO */}
+  <View style={styles.infoCard}>
+
+    <Text style={styles.description}>
+      Sistema responsável pelo controle
+      de estoque hospitalar em tempo real,
+      permitindo cadastro, baixa e
+      monitoramento de materiais médicos.
+    </Text>
+
+  </View>
+
+  {/* FORMULÁRIO */}
+  <View style={styles.formContainer}>
+
+    <Text style={styles.sectionTitle}>
+      Cadastro de Material
+    </Text>
+
+    <TextInput
+      testID="input-nome"
+      placeholder="Nome do Material"
+      value={nome}
+      onChangeText={setNome}
+      style={styles.input}
+    />
+
+    <TextInput
+      testID="input-quantidade"
+      placeholder="Quantidade"
+      keyboardType="numeric"
+      value={quantidade}
+      onChangeText={setQuantidade}
+      style={styles.input}
+    />
+
+    <TouchableOpacity
+      testID="btn-cadastrar"
+      style={styles.button}
+      onPress={cadastrarMaterial}
+    >
+
+      <Text style={styles.buttonText}>
+        ➕ Cadastrar Material
       </Text>
 
-      {/* Os alunos vão construir os componentes visuais das Sprints aqui dentro */}
+    </TouchableOpacity>
 
-      <TextInput
-        testID="input-nome"
-        placeholder="Nome do Material"
-        value={nome}
-        onChangeText={setNome}
-        style={styles.input}
-      />
+  </View>
 
-      <TextInput
-        testID="input-quantidade"
-        placeholder="Quantidade"
-        keyboardType="numeric"
-        value={quantidade}
-        onChangeText={setQuantidade}
-        style={styles.input}
-      />
+  {/* PESQUISA */}
+  <View style={styles.searchContainer}>
 
-      <TextInput
-        testID="input-busca"
-        placeholder="Pesquisar material..."
-        value={busca}
-        onChangeText={setBusca}
-        style={styles.input}
-      />
+    <Text style={styles.sectionTitle}>
+      Pesquisa de Materiais
+    </Text>
 
-      <Text testID="total-itens" style={styles.totalItens}>
-        Exibindo {materiaisFiltrados.length} item(ns)
-      </Text>
+    <TextInput
+      testID="input-busca"
+      placeholder="Pesquisar material..."
+      value={busca}
+      onChangeText={setBusca}
+      style={styles.input}
+    />
 
-      <TouchableOpacity
-        testID="btn-cadastrar"
-        style={styles.button}
-        onPress={cadastrarMaterial}
+  </View>
+
+  {/* DASHBOARD */}
+  <Text
+    testID="total-itens"
+    style={styles.totalItens}
+  >
+    📦 Total de materiais:
+    {" "}
+    {materiaisFiltrados.length}
+  </Text>
+
+  {/* LOADING */}
+  {
+    loading &&
+
+    <ActivityIndicator
+      size="large"
+      color="#2E7D32"
+    />
+  }
+
+  {/* LISTA */}
+  <FlatList
+
+    testID="lista-materiais"
+
+    data={materiaisFiltrados}
+
+    keyExtractor={(item) => item.id}
+
+    showsVerticalScrollIndicator={false}
+
+    renderItem={({ item }) => (
+
+      <View
+
+        style={[
+
+          styles.card,
+
+          Number(item.quantidade) < 10
+          &&
+          styles.cardCritico
+
+        ]}
+
+        accessibilityLabel={
+          Number(item.quantidade) < 10
+            ? "estoque-critico"
+            : ""
+        }
+
       >
-        <Text style={styles.buttonText}>
-          Cadastrar
+
+        {/* NOME */}
+        <View style={styles.cardHeader}>
+
+          <Text style={styles.materialNome}>
+            {item.nome}
+          </Text>
+
+        </View>
+
+        {/* QUANTIDADE */}
+        <Text style={styles.quantidadeTexto}>
+          Quantidade disponível:
+          {" "}
+          {item.quantidade}
         </Text>
-      </TouchableOpacity>
-    
-      {
-      loading &&
-      <ActivityIndicator
-        size="large"
-        color="#2196F3"
-      />
-      }
 
-    <FlatList
-      testID="lista-materiais"
-      data={materiaisFiltrados}
-      keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
+        {/* INPUT RETIRADA */}
+        <TextInput
 
-    <View
+          testID="input-retirada"
 
-  style={[
+          placeholder="Quantidade retirada"
 
-    styles.card,
+          keyboardType="numeric"
 
-    Number(item.quantidade) < 10 &&
-      styles.cardCritico
+          style={styles.inputRetirada}
 
-  ]}
+          value={retirada[item.id] || ""}
 
-  accessibilityLabel={
-    Number(item.quantidade) < 10
-      ? "estoque-critico"
-      : ""
-  }>
+          onChangeText={(texto) =>
 
-      <View style={{ marginBottom: 10 }}>
+            setRetirada({
 
-      <Text style={styles.materialNome}>
-        {item.nome}
-      </Text>
+              ...retirada,
 
-      <Text style={styles.quantidadeTexto}>
-        Quantidade disponível: {item.quantidade}
-      </Text>
+              [item.id]: texto,
+
+            })
+          }
+        />
+
+        {/* BOTÃO BAIXAR */}
+        <TouchableOpacity
+
+          testID="btn-baixar"
+
+          style={styles.botaoBaixar}
+
+          onPress={() =>
+            baixarEstoque(item)
+          }
+
+        >
+
+          <Text style={styles.buttonText}>
+            ➖ Baixar Estoque
+          </Text>
+
+        </TouchableOpacity>
+
+        {/* BOTÃO EXCLUIR */}
+        <TouchableOpacity
+
+          testID="btn-excluir"
+
+          style={styles.botaoExcluir}
+
+          onPress={() =>
+            excluirMaterial(item.id)
+          }
+
+        >
+
+          <Text style={styles.buttonText}>
+            🗑 Excluir Material
+          </Text>
+
+        </TouchableOpacity>
 
       </View>
 
-      <TextInput
-      testID="input-retirada"
-      placeholder="Quantidade retirada"
-      keyboardType="numeric"
-      style={styles.input}
-      value={retirada[item.id] || ""}
-      onChangeText={(texto) =>
-      setRetirada({
-      ...retirada,
-      [item.id]: texto,
-    })
-  }
+    )}
   />
 
-      <TouchableOpacity
-        testID="btn-baixar"
-        style={styles.botaoBaixar}
-        onPress={() => baixarEstoque(item)}
-      >
-
-      <Text style={styles.buttonText}>
-        ➖ Baixar Estoque
-      </Text>
-
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        testID="btn-excluir"
-        style={styles.botaoExcluir}
-        onPress={() => excluirMaterial(item.id)}
-      >
-
-      <Text style={styles.buttonText}>
-        🗑 Excluir Material
-      </Text>
-
-      </TouchableOpacity>
-    </View>
-)}
-/>        
-  </View>
+</View>
 );
-}
 
 const styles = StyleSheet.create({
 
@@ -495,4 +581,70 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "rgba(211, 47, 47, 0.25)",
   },
+
+  header: {
+  marginBottom: 20,
+},
+
+subtitle: {
+  textAlign: "center",
+  color: "#4E6E5D",
+  fontSize: 15,
+  marginTop: 5,
+},
+
+infoCard: {
+  backgroundColor: "#FFFFFF",
+  padding: 18,
+  borderRadius: 18,
+  marginBottom: 20,
+
+  shadowColor: "#000",
+  shadowOffset: {
+    width: 0,
+    height: 2,
+  },
+
+  shadowOpacity: 0.05,
+  shadowRadius: 4,
+
+  elevation: 3,
+},
+
+formContainer: {
+  backgroundColor: "#FFFFFF",
+  padding: 18,
+  borderRadius: 20,
+  marginBottom: 20,
+},
+
+searchContainer: {
+  backgroundColor: "#FFFFFF",
+  padding: 18,
+  borderRadius: 20,
+  marginBottom: 20,
+},
+
+sectionTitle: {
+  fontSize: 18,
+  fontWeight: "bold",
+  color: "#1B5E20",
+  marginBottom: 15,
+},
+
+cardHeader: {
+  marginBottom: 8,
+},
+
+inputRetirada: {
+  backgroundColor: "#F7FAF8",
+  borderRadius: 14,
+  padding: 14,
+  marginTop: 10,
+  marginBottom: 12,
+  borderWidth: 1,
+  borderColor: "#DCEEDD",
+  fontSize: 15,
+},
 });
+}
