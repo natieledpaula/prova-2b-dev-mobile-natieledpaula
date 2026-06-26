@@ -253,6 +253,9 @@ Os componentes obrigatórios foram implementados conforme solicitado pela ativid
 
 # 📸 Screenshots do Aplicativo
 
+<img width="410" height="850" alt="image" src="https://github.com/user-attachments/assets/2d2c2c8c-0f2c-45f4-8059-661bbcefabe4" />
+<img width="696" height="913" alt="image" src="https://github.com/user-attachments/assets/8be1576d-b631-4b77-b272-dc5ef42992fa" />
+
 ---
 
 # 📋 Requisitos Atendidos
