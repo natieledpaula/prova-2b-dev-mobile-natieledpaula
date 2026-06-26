@@ -287,19 +287,17 @@ return (
     testID="total-itens"
     style={styles.totalItens}
   >
-    📦 Total de materiais:
-    {" "}
-    {materiaisFiltrados.length}
+    📦 Total de materiais: {materiaisFiltrados.length}
   </Text>
 
   {/* LOADING */}
   {
-    loading &&
-
-    <ActivityIndicator
-      size="large"
-      color="#2E7D32"
-    />
+    loading && (
+      <ActivityIndicator
+        size="large"
+        color="#2E7D32"
+      />
+    )
   }
 
   {/* LISTA */}
@@ -321,8 +319,7 @@ return (
 
           styles.card,
 
-          Number(item.quantidade) < 10
-          &&
+          Number(item.quantidade) < 10 &&
           styles.cardCritico
 
         ]}
@@ -346,9 +343,7 @@ return (
 
         {/* QUANTIDADE */}
         <Text style={styles.quantidadeTexto}>
-          Quantidade disponível:
-          {" "}
-          {item.quantidade}
+          Quantidade disponível: {item.quantidade}
         </Text>
 
         {/* INPUT RETIRADA */}
@@ -417,6 +412,7 @@ return (
       </View>
 
     )}
+
   />
 
 </View>
