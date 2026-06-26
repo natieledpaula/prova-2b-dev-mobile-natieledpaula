@@ -251,6 +251,10 @@ Os componentes obrigatórios foram implementados conforme solicitado pela ativid
 
 ---
 
+# 📸 Screenshots do Aplicativo
+
+---
+
 # 📋 Requisitos Atendidos
 
 ## Funcionais
